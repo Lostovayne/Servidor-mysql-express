@@ -1,6 +1,6 @@
 // invocar Router desde express
 import { Router } from "express";
-import { Create, Delete, Update, getAll, All } from "../controllers/controllers.controller.js";
+import { Create, Delete, Update, getAll, All, login } from "../controllers/controllers.controller.js";
 
 //funciona igual que el app
 const router = Router();
@@ -13,6 +13,9 @@ router.get("/All", All);
 router.post("/create", Create);
 router.put("/update/:id", Update);
 router.delete("/delete/:id", Delete);
+
+router.get("/login", (req, res) => res.render("login"));
+router.post("/login", login);
 
 export default router;
 
